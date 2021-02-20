@@ -14,9 +14,9 @@ class PlayerViewSet(viewsets.ModelViewSet):
     ordering_fileds = ['id', 'username', 'coins', 'max_points']
     ordering = ['-date_joined']
 
-    def get_queryset(self):
-        clan = self.request.user.clan
-        return Player.objects.filter(clan=clan)
+    #def get_queryset(self):
+    #    clan = self.request.user.clan
+    #    return Player.objects.filter(clan=clan)
 
     def get_serializer_class(self):
         if self.action == 'retrieve':

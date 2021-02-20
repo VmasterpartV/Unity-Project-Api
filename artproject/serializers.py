@@ -23,6 +23,7 @@ class PlayerInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Player
         fields = ['id', 'username', 'email', 'clan', 'coins', 'max_points']
+        depth = 1
 
 class PlayerCreateSerializer(serializers.ModelSerializer):
     
