@@ -4,85 +4,42 @@
 
 Back y apis consumibles del proyecto
 
-## Requisitos previos ##
-- [Python](https://www.python.org/downloads/)
-- [VSCode](https://visualstudio.microsoft.com/es/downloads/)
-- [Github](https://desktop.github.com/)
-- [Git](https://git-scm.com/downloads)
-- [POSTMAN](https://www.postman.com/downloads/)
+## Features
 
-## Comandos de instalación ##
+- Django 3.0+
+- [Django REST Framework](https://www.django-rest-framework.org/) - Powerful and flexible toolkit for building Web APIs.
+- [Django Cors Headers](https://pypi.org/project/django-cors-headers/) - A Django application for handling the server headers required for Cross-Origin Resource Sharing (CORS).
+- [Django Filter](https://django-filter.readthedocs.io/en/stable/) - Simple way to filter down a queryset based on parameters a user provides.
+- [Simple JWT](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/) - A JSON Web Token authentication plugin for the Django REST Framework.
+- Procfile for running gunicorn with New Relic's Python agent.
+- Support for automatic generation of [OpenAPI](https://www.openapis.org/) schemas.
+- Automated generation of real Swagger/OpenAPI 2.0 schemas from Django REST Framework code with [drf-yasg](https://drf-yasg.readthedocs.io/en/stable/).
 
-    `pip install`
+## Prerequisites
 
-## Comandos ejecución ##
+- Python 3.7>
+- Virtualenv
+## Instalation
 
-    `virtualenv venv --python=python`
+    $ python3 -m venv venv
+    $ source venv/bin/activate
+    $ pip install -r requirements.txt
+
+### DEV
+
+Just make a copy from `.env.local.example` and/or rename to `.env.local` and setup your variables. Then run in terminal:
+
+    $ source .env.local
+
+The first time you run the application, make sure to apply the database migrations and create a super user account:
+
+    $ python manage.py migrate
+    $ python manage.py createsuperuser
+
+Finally start development server:
+
+    $ python manage.py runserver
+
+### Update Dependencies
     
-    `.\venv\Scripts\activate`
-
-    `python manage.py runserver`
-    
-    `python manage.py help`
-
-    ### *Aplicar cambios de modelos* ###
-
-    `python manage.py makemigrations`
-
-### *Migrar cambios de modelos* ###
-
-    `python manage.py migrate` 
-
-### *Crear un superusuario* ###
-
-    `python manage.py createsuperuser`
-
-## Comandos adicionales ##
-
-### *Actualizar dependencias cada que se instale una nueva libreria* ###
-    
-    `pip freeze > requirements.txt`
-
-    `pip install -r requirements.txt`
-
-    `pip freeze`
-
-### *Crear archivo settings local.py*###
-
-# **_Github y Git_** #
-
-### *Crear repositorio nuevo* ###
-  
-    `git init`
-
-### *Add and commit git add (nombre de archivo)* ###
-
-    `git commit -m "commit"`
-
-### *Envio de cambios* ###
-    
-    `git push origin` (rama en la cual vas a enviar cambios)
-
-### *Crear y cambiar de rama* ###
-    
-    `git checkout -b (nombre de rama)`
-
-### *Volver a rama principal* ###
-    
-    `git checkout master`
-
-### *Borrar la rama* ###
-    
-    `git branch -d feature_x`
-
-### *Hacer disponible a todos la rama (push)* ###
-    
-    `git push origin <nombre de rama>`
-
-### *Actualizar repositorio local al commit mas nuevo* ###
-    
-    `git pull`
-
-### *Fusionar rama con la que estas trabajando* ###
-    
-    `git merge <nombre de la rama>`
+    $ pip freeze > requirements.txt
